@@ -189,7 +189,7 @@ class CardSelector extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(color: AppTheme.outline, width: selected ? 3 : 2.5),
                 boxShadow: const [
-                  BoxShadow(color: Color(0xFFD9CFB6), offset: Offset(0, 3), blurRadius: 0),
+                  BoxShadow(color: AppTheme.stickerShadowColor, offset: Offset(0, 3), blurRadius: 0),
                 ],
               ),
               child: Row(
@@ -402,7 +402,7 @@ class _WalletPaymentPickerPickerState extends State<_WalletPaymentPickerSheet> {
                           borderRadius: BorderRadius.circular(16),
                           border: Border.all(color: AppTheme.outline, width: selected ? 3 : 2.5),
                           boxShadow: const [
-                            BoxShadow(color: Color(0xFFD9CFB6), offset: Offset(0, 3), blurRadius: 0),
+                            BoxShadow(color: AppTheme.stickerShadowColor, offset: Offset(0, 3), blurRadius: 0),
                           ],
                         ),
                         child: Row(

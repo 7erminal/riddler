@@ -52,63 +52,78 @@ class _CartoonNav extends StatelessWidget {
       (icon: Icons.tune_rounded, label: 'Settings'),
     ];
 
-    return Container(
-      margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-      padding: const EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: AppTheme.surface,
-        borderRadius: BorderRadius.circular(26),
-        border: Border.all(color: AppTheme.outline, width: 3),
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0xFFD9CFB6),
-            offset: Offset(0, 6),
-            blurRadius: 0,
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          for (var i = 0; i < items.length; i++)
-            Expanded(
-              child: GestureDetector(
-                onTap: () => onChanged(i),
-                behavior: HitTestBehavior.opaque,
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 180),
-                  curve: Curves.easeOutBack,
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  decoration: BoxDecoration(
-                    color: index == i ? AppTheme.primary : Colors.transparent,
-                    borderRadius: BorderRadius.circular(18),
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      AnimatedScale(
-                        scale: index == i ? 1.1 : 1,
-                        duration: const Duration(milliseconds: 180),
-                        child: Icon(
-                          items[i].icon,
-                          color: AppTheme.ink,
-                          size: 26,
+    return SafeArea(
+      top: false,
+      left: false,
+      right: false,
+      minimum: const EdgeInsets.fromLTRB(16, 8, 16, 10),
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: AppTheme.surface,
+          borderRadius: BorderRadius.circular(26),
+          border: Border.all(color: AppTheme.outline, width: AppTheme.borderWidth),
+          boxShadow: [
+            BoxShadow(
+              color: AppTheme.stickerShadowColor,
+              offset: const Offset(0, 5),
+              blurRadius: 0,
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            for (var i = 0; i < items.length; i++)
+              Expanded(
+                child: Semantics(
+                  label: items[i].label,
+                  button: true,
+                  selected: index == i,
+                  child: GestureDetector(
+                    onTap: () => onChanged(i),
+                    behavior: HitTestBehavior.opaque,
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.easeOutBack,
+                      padding: const EdgeInsets.symmetric(vertical: 9),
+                      decoration: BoxDecoration(
+                        color: index == i ? AppTheme.primary : Colors.transparent,
+                        borderRadius: BorderRadius.circular(18),
+                        border: index == i
+                            ? Border.all(color: AppTheme.outline, width: 2)
+                            : null,
+                      ),
+                      child: ExcludeSemantics(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            AnimatedScale(
+                              scale: index == i ? 1.08 : 1,
+                              duration: const Duration(milliseconds: 200),
+                              child: Icon(
+                                items[i].icon,
+                                color: index == i ? AppTheme.ink : AppTheme.inkSoft,
+                                size: 25,
+                              ),
+                            ),
+                            const SizedBox(height: 3),
+                            Text(
+                              items[i].label,
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w800,
+                                color: index == i ? AppTheme.ink : AppTheme.inkSoft,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      const SizedBox(height: 3),
-                      Text(
-                        items[i].label,
-                        style: const TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w800,
-                          color: AppTheme.ink,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ),
-            ),
-        ],
+          ],
+        ),
       ),
     );
   }

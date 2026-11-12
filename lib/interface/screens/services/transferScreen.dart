@@ -144,7 +144,7 @@ class _TransferScreenState extends State<TransferScreen> {
     final bloc = context.watch<WalletBloc>();
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: GestureDetector(
           onTap: FocusScope.of(context).unfocus,

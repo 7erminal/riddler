@@ -113,7 +113,7 @@ class PinDots extends StatelessWidget {
               border: Border.all(color: AppTheme.outline, width: 3),
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFFD9CFB6),
+                  color: AppTheme.stickerShadowColor,
                   offset: Offset(0, i < length ? 4 : 2),
                   blurRadius: 0,
                 ),

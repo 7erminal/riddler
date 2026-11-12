@@ -404,6 +404,7 @@ class HomeScreen extends StatelessWidget {
                             width: 300,
                             child: BankCardView(
                               card: card,
+                              compact: true,
                               isShared: card.isShared,
                               showShareIcon: !card.isShared,
                               onShare: () => showShareCardSheet(context, card),

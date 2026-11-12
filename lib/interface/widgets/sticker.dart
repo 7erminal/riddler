@@ -16,7 +16,7 @@ class Sticker extends StatelessWidget {
     super.key,
     required this.child,
     this.color = AppTheme.surface,
-    this.shadow = const Color(0xFFD9CFB6),
+    this.shadow = AppTheme.stickerShadowColor,
     this.radius = 24,
     this.dy = 5,
     this.padding,
@@ -32,7 +32,7 @@ class Sticker extends StatelessWidget {
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(radius),
-        border: border ?? Border.all(color: AppTheme.outline, width: 3),
+        border: border ?? Border.all(color: AppTheme.outline, width: AppTheme.borderWidth),
         boxShadow: [
           BoxShadow(color: shadow, offset: Offset(0, dy), blurRadius: 0),
         ],
@@ -58,7 +58,7 @@ class StickerButton extends StatefulWidget {
     required this.child,
     this.onTap,
     this.color = AppTheme.surface,
-    this.shadow = const Color(0xFFD9CFB6),
+    this.shadow = AppTheme.stickerShadowColor,
     this.radius = 24,
     this.dy = 5,
     this.padding,
@@ -74,28 +74,34 @@ class _StickerButtonState extends State<StickerButton> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTapDown: (_) => setState(() => _pressed = true),
-      onTapUp: (_) => setState(() => _pressed = false),
-      onTapCancel: () => setState(() => _pressed = false),
-      onTap: widget.onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 90),
-        curve: Curves.easeOut,
-        margin: widget.margin,
-        padding: widget.padding,
-        decoration: BoxDecoration(
-          color: widget.color,
-          borderRadius: BorderRadius.circular(widget.radius),
-          border: Border.all(color: AppTheme.outline, width: 3),
-          boxShadow: _pressed
-              ? [BoxShadow(color: widget.shadow, offset: Offset(0, 1), blurRadius: 0)]
-              : [BoxShadow(color: widget.shadow, offset: Offset(0, widget.dy), blurRadius: 0)],
-        ),
-        child: AnimatedScale(
-          scale: _pressed ? 0.97 : 1,
-          duration: const Duration(milliseconds: 90),
-          child: widget.child,
+    final enabled = widget.onTap != null;
+
+    return Semantics(
+      button: true,
+      enabled: enabled,
+      child: GestureDetector(
+        onTapDown: enabled ? (_) => setState(() => _pressed = true) : null,
+        onTapUp: enabled ? (_) => setState(() => _pressed = false) : null,
+        onTapCancel: enabled ? () => setState(() => _pressed = false) : null,
+        onTap: widget.onTap,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 110),
+          curve: Curves.easeOut,
+          margin: widget.margin,
+          padding: widget.padding,
+          decoration: BoxDecoration(
+            color: widget.color,
+            borderRadius: BorderRadius.circular(widget.radius),
+            border: Border.all(color: AppTheme.outline, width: AppTheme.borderWidth),
+            boxShadow: _pressed
+                ? [BoxShadow(color: widget.shadow, offset: const Offset(0, 1), blurRadius: 0)]
+                : [BoxShadow(color: widget.shadow, offset: Offset(0, widget.dy), blurRadius: 0)],
+          ),
+          child: AnimatedScale(
+            scale: _pressed ? 0.97 : 1,
+            duration: const Duration(milliseconds: 110),
+            child: widget.child,
+          ),
         ),
       ),
     );

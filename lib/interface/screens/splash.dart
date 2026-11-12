@@ -57,7 +57,7 @@ class _SplashRouterState extends State<SplashRouter>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: Center(
           child: FadeTransition(
@@ -82,7 +82,7 @@ class _SplashRouterState extends State<SplashRouter>
                             width: 4,
                           ),
                           boxShadow: AppTheme.stickerShadow(
-                            const Color(0xFFD9CFB6),
+                            AppTheme.stickerShadowColor,
                             dy: 8,
                           ),
                         ),

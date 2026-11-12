@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#FFF9EE"/>
+
+  <!-- Yellow sticker base and its signature hard shadow. -->
+  <rect x="52" y="58" width="408" height="408" rx="120" fill="#D9CFB6"/>
+  <rect x="52" y="42" width="408" height="408" rx="120" fill="#FFF085" stroke="#22303C" stroke-width="18"/>
+
+  <!-- Little bits of playful confetti. -->
+  <path d="M111 159v28M97 173h28" stroke="#FF9A76" stroke-width="10" stroke-linecap="round"/>
+  <path d="M398 168v22M387 179h22" stroke="#8FE8D3" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="386" cy="350" r="9" fill="#C7C8FF" stroke="#22303C" stroke-width="5"/>
+
+  <!-- Curly tail and little feet sit behind the body. -->
+  <path d="M126 274c-27-5-39 13-31 29 8 17 31 16 36 1 4-11-5-19-15-17" fill="none" stroke="#22303C" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="157" y="345" width="58" height="66" rx="22" fill="#CBFBF1" stroke="#22303C" stroke-width="14"/>
+  <rect x="282" y="345" width="58" height="66" rx="22" fill="#CBFBF1" stroke="#22303C" stroke-width="14"/>
+
+  <!-- Round piggy bank body. -->
+  <ellipse cx="244" cy="286" rx="143" ry="108" fill="#CBFBF1" stroke="#22303C" stroke-width="16"/>
+
+  <!-- Coin slot and coin. -->
+  <rect x="207" y="190" width="74" height="13" rx="6.5" fill="#22303C"/>
+  <circle cx="244" cy="145" r="35" fill="#FF9A76" stroke="#22303C" stroke-width="13"/>
+  <path d="M244 126v38M233 135h17c7 0 8 10 0 10h-12c-8 0-7 11 0 11h17" fill="none" stroke="#22303C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Perky ear, eye, and rosy snout. -->
+  <path d="M291 205c-5-29 8-46 25-48 14 21 12 39 1 56" fill="#FF9A76" stroke="#22303C" stroke-width="13" stroke-linejoin="round"/>
+  <circle cx="304" cy="235" r="8" fill="#22303C"/>
+  <ellipse cx="357" cy="268" rx="47" ry="37" fill="#FFD3E0" stroke="#22303C" stroke-width="12"/>
+  <ellipse cx="345" cy="268" rx="5" ry="9" fill="#22303C"/>
+  <ellipse cx="369" cy="268" rx="5" ry="9" fill="#22303C"/>
+</svg>
