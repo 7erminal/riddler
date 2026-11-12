@@ -280,7 +280,7 @@ class _WalletScreenState extends State<WalletScreen> {
             padding: const EdgeInsets.only(bottom: 12),
             child: SubWalletTile(
               subWallet: w,
-              onTap: () => showEditSubWalletSheet(context, w),
+              onEdit: () => showEditSubWalletSheet(context, w),
               onDelete: () => _deleteSubWallet(context, wallet.id, w),
               onWithdraw: w.balance > 0
                   ? () => _withdraw(context, wallet.id, w.id, w.title, w.balance)
