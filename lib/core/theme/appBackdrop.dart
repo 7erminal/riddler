@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ridlers/core/theme/appTheme.dart';
 
-/// A quiet, warm paper canvas with a few oversized pastel doodles.
+/// A soft sky-blue canvas with a few oversized pastel doodles.
 ///
 /// Keeping the decoration behind the navigator gives every screen a shared
 /// brand surface without affecting scrolling, hit testing, or route changes.
@@ -15,7 +15,16 @@ class AppBackdrop extends StatelessWidget {
     return Stack(
       fit: StackFit.expand,
       children: [
-        const ColoredBox(color: AppTheme.background),
+        const DecoratedBox(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [AppTheme.background, AppTheme.backgroundShade],
+            ),
+          ),
+          child: SizedBox.expand(),
+        ),
         const Positioned.fill(
           child: IgnorePointer(
             child: CustomPaint(painter: _PaperDoodlePainter()),
@@ -32,18 +41,18 @@ class _PaperDoodlePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    // These broad, low-opacity shapes sit well outside the reading path. They
-    // add warmth and a little personality while keeping text contrast high.
+    // Soft cloud-like circles and tiny sticker sparkles add color without
+    // lowering contrast or competing with the content.
     final accents = <({Offset center, double radius, Color color})>[
       (
         center: Offset(size.width * 0.99, size.height * 0.12),
         radius: 62,
-        color: const Color(0x20FFF085),
+        color: const Color(0x2BFFFFFF),
       ),
       (
         center: Offset(size.width * 0.01, size.height * 0.56),
         radius: 42,
-        color: const Color(0x18FFC3D6),
+        color: const Color(0x1FFFD3E0),
       ),
       (
         center: Offset(size.width * 0.96, size.height * 0.78),
