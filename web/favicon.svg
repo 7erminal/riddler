@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <rect width="512" height="512" fill="#E7F4FF"/>
+  <rect width="512" height="512" fill="#F4F7F8"/>
 
   <!-- Yellow sticker base and its signature hard shadow. -->
   <rect x="52" y="58" width="408" height="408" rx="120" fill="#B4D1E6"/>

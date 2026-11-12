@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 
 /// Ridlers brand palette.
 ///
-/// A playful, cartoonish identity with a soft sky-blue canvas, sunny yellow
+/// A playful, cartoonish identity with a soft blue-gray canvas, sunny yellow
 /// `#FFF085`, mint `#CBFBF1`, chunky ink borders, and hard sticker shadows.
 class AppTheme {
   AppTheme._();
@@ -25,8 +25,8 @@ class AppTheme {
 
   // ---- Surfaces ----
   static const Color surface = Color(0xFFFFFEFA);
-  static const Color background = Color(0xFFE7F4FF);
-  static const Color backgroundShade = Color(0xFFD7EDFF);
+  static const Color background = Color(0xFFF4F7F8);
+  static const Color backgroundShade = Color(0xFFEEF3F5);
   static const Color cardBg = surface;
 
   // ---- Text ----
@@ -91,7 +91,7 @@ class AppTheme {
     final base = ThemeData(
       useMaterial3: true,
       colorScheme: _colorScheme,
-      // The shared AppBackdrop paints the sky canvas behind every route.
+      // The shared AppBackdrop paints the mist-blue canvas behind every route.
       scaffoldBackgroundColor: Colors.transparent,
       splashFactory: InkSparkle.splashFactory,
       textSelectionTheme: const TextSelectionThemeData(

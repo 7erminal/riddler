@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ridlers/core/theme/appTheme.dart';
 
-/// A soft sky-blue canvas with a few oversized pastel doodles.
+/// A pale blue-gray canvas with a barely-there gradient and tiny pastel accents.
 ///
 /// Keeping the decoration behind the navigator gives every screen a shared
 /// brand surface without affecting scrolling, hit testing, or route changes.
@@ -41,23 +41,23 @@ class _PaperDoodlePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    // Soft cloud-like circles and tiny sticker sparkles add color without
-    // lowering contrast or competing with the content.
+    // Tiny, low-opacity accents stay near the edges so the brand colors in
+    // the content can stand out against a quiet background.
     final accents = <({Offset center, double radius, Color color})>[
       (
-        center: Offset(size.width * 0.99, size.height * 0.12),
-        radius: 62,
-        color: const Color(0x2BFFFFFF),
+        center: Offset(size.width * 0.985, size.height * 0.08),
+        radius: 36,
+        color: const Color(0x10C7E7FF),
       ),
       (
-        center: Offset(size.width * 0.01, size.height * 0.56),
-        radius: 42,
-        color: const Color(0x1FFFD3E0),
+        center: Offset(size.width * 0.015, size.height * 0.54),
+        radius: 30,
+        color: const Color(0x0CFFD3E0),
       ),
       (
-        center: Offset(size.width * 0.96, size.height * 0.78),
-        radius: 48,
-        color: const Color(0x1CCBFBF1),
+        center: Offset(size.width * 0.98, size.height * 0.90),
+        radius: 32,
+        color: const Color(0x0DCBFBF1),
       ),
     ];
 
@@ -69,21 +69,21 @@ class _PaperDoodlePainter extends CustomPainter {
 
     _drawSparkle(
       canvas,
-      Offset(size.width * 0.09, size.height * 0.19),
-      8,
-      const Color(0x3AF6CF3F),
+      Offset(size.width * 0.075, size.height * 0.14),
+      5,
+      const Color(0x18F6CF3F),
     );
     _drawSparkle(
       canvas,
-      Offset(size.width * 0.91, size.height * 0.43),
-      6,
-      const Color(0x3A8FE8D3),
+      Offset(size.width * 0.93, size.height * 0.44),
+      4,
+      const Color(0x168FE8D3),
     );
     _drawSparkle(
       canvas,
-      Offset(size.width * 0.12, size.height * 0.87),
-      7,
-      const Color(0x35FF9A76),
+      Offset(size.width * 0.10, size.height * 0.91),
+      5,
+      const Color(0x16FF9A76),
     );
   }
 
