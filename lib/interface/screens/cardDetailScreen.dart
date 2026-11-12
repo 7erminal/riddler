@@ -19,7 +19,7 @@ class CardDetailScreen extends StatelessWidget {
     final ownerPhone = _ownerPhoneOf(context, bloc);
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),

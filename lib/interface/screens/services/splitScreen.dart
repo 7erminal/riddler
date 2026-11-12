@@ -81,7 +81,7 @@ class _SplitPaymentScreenState extends State<SplitPaymentScreen> {
     final share = double.tryParse(_totalCtrl.text) ?? 0;
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: GestureDetector(
           onTap: FocusScope.of(context).unfocus,

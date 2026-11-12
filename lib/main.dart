@@ -9,6 +9,9 @@ void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
     statusBarIconBrightness: Brightness.dark,
+    systemNavigationBarColor: AppTheme.background,
+    systemNavigationBarDividerColor: AppTheme.background,
+    systemNavigationBarIconBrightness: Brightness.dark,
   ));
   runApp(
     MultiProvider(
@@ -30,6 +33,9 @@ class MyApp extends StatelessWidget {
       title: 'Ridlers',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.theme,
+      builder: (context, child) => AppBackdrop(
+        child: child ?? const SizedBox.shrink(),
+      ),
       initialRoute: SplashRouter.id,
       routes: {
         SplashRouter.id: (_) => const SplashRouter(),

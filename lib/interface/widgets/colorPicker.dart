@@ -34,7 +34,7 @@ class ColorPicker extends StatelessWidget {
                 ),
                 boxShadow: const [
                   BoxShadow(
-                    color: Color(0xFFD9CFB6),
+                    color: AppTheme.stickerShadowColor,
                     offset: Offset(0, 3),
                     blurRadius: 0,
                   ),

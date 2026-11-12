@@ -23,24 +23,26 @@ class AppTheme {
   static const Color lemon = Color(0xFFEDFFC9);
 
   // ---- Surfaces ----
-  static const Color surface = Color(0xFFFFFFFF);
-  static const Color background = Color(0xFFFBF6E9);
-  static const Color cardBg = Color(0xFFFFFFFF);
+  static const Color surface = Color(0xFFFFFEFA);
+  static const Color background = Color(0xFFFFF9EE);
+  static const Color cardBg = surface;
 
   // ---- Text ----
   static const Color ink = Color(0xFF22303C);
-  static const Color inkSoft = Color(0xFF5C6B78);
-  static const Color inkFaint = Color(0xFF93A0AA);
+  static const Color inkSoft = Color(0xFF566572);
+  static const Color inkFaint = Color(0xFF77848E);
 
   // ---- Lines ----
   static const Color outline = Color(0xFF22303C);
   static const Color divider = Color(0xFFE7DFC9);
+  static const Color stickerShadowColor = Color(0xFFD9CFB6);
 
-  static const Color error = Color(0xFFFF5A5F);
-  static const Color success = Color(0xFF3DBE8B);
+  static const Color error = Color(0xFFDA4F58);
+  static const Color success = Color(0xFF237B5D);
 
   // Chunky cartoon helpers ------------------------------------------------
   static const double borderWidth = 3;
+  static const double inputBorderWidth = 2.5;
 
   /// Hard "sticker" shadow: offset, zero blur.
   static List<BoxShadow> stickerShadow(Color color, {double dy = 5}) => [
@@ -54,7 +56,7 @@ class AppTheme {
 
   static BoxDecoration sticker({
     Color color = surface,
-    Color shadow = const Color(0xFFD9CFB6),
+    Color shadow = stickerShadowColor,
     Color? borderColor,
     double radius = 24,
     double dy = 5,
@@ -87,7 +89,8 @@ class AppTheme {
     final base = ThemeData(
       useMaterial3: true,
       colorScheme: _colorScheme,
-      scaffoldBackgroundColor: background,
+      // The shared AppBackdrop paints the paper canvas behind every route.
+      scaffoldBackgroundColor: Colors.transparent,
       splashFactory: InkSparkle.splashFactory,
     );
 
@@ -186,7 +189,7 @@ class AppTheme {
             borderRadius: BorderRadius.circular(20),
             side: const BorderSide(color: outline, width: borderWidth),
           ),
-          shadowColor: const Color(0xFFD9CFB6),
+          shadowColor: stickerShadowColor,
           textStyle: textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.w800,
           ),
@@ -217,22 +220,24 @@ class AppTheme {
         contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(18),
-          borderSide: const BorderSide(color: outline, width: borderWidth),
+          borderSide: const BorderSide(color: outline, width: inputBorderWidth),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(18),
-          borderSide: const BorderSide(color: outline, width: borderWidth),
+          borderSide: const BorderSide(color: outline, width: inputBorderWidth),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(18),
-          borderSide: BorderSide(color: primaryDark, width: 3),
+          borderSide: const BorderSide(color: primaryDark, width: borderWidth),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(18),
-          borderSide: const BorderSide(color: error, width: borderWidth),
+          borderSide: const BorderSide(color: error, width: inputBorderWidth),
         ),
         labelStyle: const TextStyle(color: inkSoft, fontSize: 15),
+        floatingLabelStyle: const TextStyle(color: inkSoft, fontSize: 15),
         hintStyle: const TextStyle(color: inkFaint, fontSize: 15),
+        prefixIconColor: inkSoft,
       ),
       cardTheme: CardThemeData(
         color: surface,

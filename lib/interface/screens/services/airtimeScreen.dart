@@ -121,7 +121,7 @@ class _AirtimeScreenState extends State<AirtimeScreen> {
     final bloc = context.watch<WalletBloc>();
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: GestureDetector(
           onTap: FocusScope.of(context).unfocus,
@@ -152,7 +152,7 @@ class _AirtimeScreenState extends State<AirtimeScreen> {
                           borderRadius: BorderRadius.circular(16),
                           border: Border.all(color: AppTheme.outline, width: _network == n ? 3 : 2.5),
                           boxShadow: const [
-                            BoxShadow(color: Color(0xFFD9CFB6), offset: Offset(0, 3), blurRadius: 0),
+                            BoxShadow(color: AppTheme.stickerShadowColor, offset: Offset(0, 3), blurRadius: 0),
                           ],
                         ),
                         child: Text(

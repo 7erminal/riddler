@@ -58,7 +58,7 @@ class GroupWalletSelector extends StatelessWidget {
                 border: Border.all(color: AppTheme.outline, width: 3),
                 boxShadow: const [
                   BoxShadow(
-                    color: Color(0xFFD9CFB6),
+                    color: AppTheme.stickerShadowColor,
                     offset: Offset(0, 3),
                     blurRadius: 0,
                   ),

@@ -163,7 +163,7 @@ class _RequestMoneyScreenState extends State<RequestMoneyScreen> {
     final bloc = context.watch<WalletBloc>();
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: GestureDetector(
           onTap: FocusScope.of(context).unfocus,
