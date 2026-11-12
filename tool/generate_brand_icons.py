@@ -16,12 +16,12 @@ ROOT = Path(__file__).resolve().parents[1]
 SCALE = 4
 SIZE = 512
 INK = "#22303C"
-PAPER = "#FFF9EE"
+PAPER = "#E7F4FF"
 YELLOW = "#FFF085"
 MINT = "#CBFBF1"
 CORAL = "#FF9A76"
 PINK = "#FFD3E0"
-SHADOW = "#D9CFB6"
+SHADOW = "#B4D1E6"
 LAVENDER = "#C7C8FF"
 
 

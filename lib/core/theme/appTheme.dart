@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 
 /// Ridlers brand palette.
 ///
-/// A sunny, cartoonish, flat identity built around sunny yellow `#FFF085`
-/// and mint `#CBFBF1`, with chunky ink borders and hard sticker shadows.
+/// A playful, cartoonish identity with a soft sky-blue canvas, sunny yellow
+/// `#FFF085`, mint `#CBFBF1`, chunky ink borders, and hard sticker shadows.
 class AppTheme {
   AppTheme._();
 
@@ -19,23 +19,25 @@ class AppTheme {
   static const Color pink = Color(0xFFFFD3E0);
   static const Color periwinkle = Color(0xFFC7C8FF);
   static const Color sky = Color(0xFFC7E7FF);
+  static const Color skyAccent = Color(0xFF468EB7);
   static const Color lavender = Color(0xFFE5D9FF);
   static const Color lemon = Color(0xFFEDFFC9);
 
   // ---- Surfaces ----
   static const Color surface = Color(0xFFFFFEFA);
-  static const Color background = Color(0xFFFFF9EE);
+  static const Color background = Color(0xFFE7F4FF);
+  static const Color backgroundShade = Color(0xFFD7EDFF);
   static const Color cardBg = surface;
 
   // ---- Text ----
   static const Color ink = Color(0xFF22303C);
   static const Color inkSoft = Color(0xFF566572);
-  static const Color inkFaint = Color(0xFF77848E);
+  static const Color inkFaint = Color(0xFF596A75);
 
   // ---- Lines ----
   static const Color outline = Color(0xFF22303C);
-  static const Color divider = Color(0xFFE7DFC9);
-  static const Color stickerShadowColor = Color(0xFFD9CFB6);
+  static const Color divider = Color(0xFFD2E4F0);
+  static const Color stickerShadowColor = Color(0xFFB4D1E6);
 
   static const Color error = Color(0xFFDA4F58);
   static const Color success = Color(0xFF237B5D);
@@ -89,9 +91,14 @@ class AppTheme {
     final base = ThemeData(
       useMaterial3: true,
       colorScheme: _colorScheme,
-      // The shared AppBackdrop paints the paper canvas behind every route.
+      // The shared AppBackdrop paints the sky canvas behind every route.
       scaffoldBackgroundColor: Colors.transparent,
       splashFactory: InkSparkle.splashFactory,
+      textSelectionTheme: const TextSelectionThemeData(
+        cursorColor: skyAccent,
+        selectionColor: Color(0x55468EB7),
+        selectionHandleColor: skyAccent,
+      ),
     );
 
     final textTheme = base.textTheme
@@ -228,7 +235,7 @@ class AppTheme {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(18),
-          borderSide: const BorderSide(color: primaryDark, width: borderWidth),
+          borderSide: const BorderSide(color: skyAccent, width: borderWidth),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(18),
